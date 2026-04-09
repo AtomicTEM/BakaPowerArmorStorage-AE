@@ -16,7 +16,9 @@ jobs:
           submodules: recursive
 
       - name: Update CommonLibF4 to latest
-        run: git submodule update --remote lib/commonlibf4
+        run: |
+          git submodule update --remote lib/commonlibf4
+          git -C lib/commonlibf4 submodule update --init --recursive
 
       - name: Setup xmake
         uses: xmake-io/github-action-setup-xmake@v1
