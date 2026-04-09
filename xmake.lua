@@ -32,8 +32,7 @@ target("BakaPowerArmorStorage")
     -- add commonlibf4 plugin
     add_rules("commonlibf4.plugin", {
         name = "BakaPowerArmorStorage",
-        author = "shad0wshayd3",
-        version = { major = 2, minor = 0, patch = 0 }
+        author = "shad0wshayd3"
     })
 
     -- add src files
