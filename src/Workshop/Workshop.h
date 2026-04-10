@@ -5,7 +5,7 @@
 namespace Workshop
 {
 	class PlacementMode :
-		public REX ::Singleton<PlacementMode>,
+		public REX ::TSingleton<PlacementMode>,
 		public RE::BSTEventSink<RE::MenuOpenCloseEvent>,
 		public RE::BSTEventSink<RE::Workshop::ItemPlacedEvent>,
 		public RE::BSTEventSink<RE::Workshop::WorkshopModeEvent>
@@ -23,12 +23,12 @@ namespace Workshop
 					return PlacementMode::IsActive() ? false : _Hook0();
 				}
 
-				inline static REL::Hook _Hook0{ REL::ID(2224981), 0x2FD, CanNavigate };
-				inline static REL::Hook _Hook1{ REL::ID(2224981), 0x396, CanNavigate };
-				inline static REL::Hook _Hook2{ REL::ID(2224981), 0x47F, CanNavigate };
-				inline static REL::Hook _Hook3{ REL::ID(2224981), 0x742, CanNavigate };
-				inline static REL::Hook _Hook4{ REL::ID(2224989), 0x00C, CanNavigate };
-				inline static REL::Hook _Hook5{ REL::ID(2224990), 0x00C, CanNavigate };
+				inline static REL::THook _Hook0{ REL::ID(2224981), 0x2FD, CanNavigate };
+				inline static REL::THook _Hook1{ REL::ID(2224981), 0x396, CanNavigate };
+				inline static REL::THook _Hook2{ REL::ID(2224981), 0x47F, CanNavigate };
+				inline static REL::THook _Hook3{ REL::ID(2224981), 0x742, CanNavigate };
+				inline static REL::THook _Hook4{ REL::ID(2224989), 0x00C, CanNavigate };
+				inline static REL::THook _Hook5{ REL::ID(2224990), 0x00C, CanNavigate };
 			};
 
 			// Prevent Workshops marked as deleted as being valid
@@ -50,16 +50,16 @@ namespace Workshop
 					return _Hook0(a_workshop, a_refr);
 				}
 
-				inline static REL::Hook _Hook0{ REL::ID(2195119), 0x1CA, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook1{ REL::ID(2195129), 0x0D2, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook2{ REL::ID(2195191), 0x02A, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook3{ REL::ID(2195192), 0x14D, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook4{ REL::ID(2195266), 0x08F, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook5{ REL::ID(2195311), 0x075, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook6{ REL::ID(2195496), 0x085, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook7{ REL::ID(2195585), 0x116, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook8{ REL::ID(2225003), 0x277, IsReferenceWithinBuildableArea };
-				inline static REL::Hook _Hook9{ REL::ID(2253487), 0x036, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook0{ REL::ID(2195119), 0x1CA, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook1{ REL::ID(2195129), 0x0D2, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook2{ REL::ID(2195191), 0x02A, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook3{ REL::ID(2195192), 0x14D, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook4{ REL::ID(2195266), 0x08F, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook5{ REL::ID(2195311), 0x075, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook6{ REL::ID(2195496), 0x085, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook7{ REL::ID(2195585), 0x116, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook8{ REL::ID(2225003), 0x277, IsReferenceWithinBuildableArea };
+				inline static REL::THook _Hook9{ REL::ID(2253487), 0x036, IsReferenceWithinBuildableArea };
 			};
 
 			// Disable Workshop Startup/End sounds
@@ -86,8 +86,8 @@ namespace Workshop
 					return _Hook0(a_soundName);
 				}
 
-				inline static REL::Hook _Hook0{ REL::ID(2224973), 0x10C3, PlayMenuSound };
-				inline static REL::Hook _Hook1{ REL::ID(2224974), 0x0160, PlayMenuSound };
+				inline static REL::THook _Hook0{ REL::ID(2224973), 0x10C3, PlayMenuSound };
+				inline static REL::THook _Hook1{ REL::ID(2224974), 0x0160, PlayMenuSound };
 			};
 
 			// Prevent tagging for search in FreeBuild mode
@@ -99,8 +99,8 @@ namespace Workshop
 					return PlacementMode::IsActive() ? 0 : _Hook0(a_this);
 				}
 
-				inline static REL::Hook _Hook0{ REL::ID(2195119), 0xEE6, ShouldShowTagForSearch };
-				inline static REL::Hook _Hook1{ REL::ID(2224992), 0x670, ShouldShowTagForSearch };
+				inline static REL::THook _Hook0{ REL::ID(2195119), 0xEE6, ShouldShowTagForSearch };
+				inline static REL::THook _Hook1{ REL::ID(2224992), 0x670, ShouldShowTagForSearch };
 			};
 
 			// Prevent a stupid textbox from showing up for a split second after placing an item
@@ -117,21 +117,21 @@ namespace Workshop
 					_Hook0(a_this, a_stringingWire);
 				}
 
-				inline static REL::Hook _Hook0{ REL::ID(2224973), 0x1072, UpdateRequirements };
-				inline static REL::Hook _Hook1{ REL::ID(2224975), 0x01DE, UpdateRequirements };
-				inline static REL::Hook _Hook2{ REL::ID(2224981), 0x0590, UpdateRequirements };
-				inline static REL::Hook _Hook3{ REL::ID(2224981), 0x084D, UpdateRequirements };
-				inline static REL::Hook _Hook4{ REL::ID(2224981), 0x0A02, UpdateRequirements };
-				inline static REL::Hook _Hook5{ REL::ID(2224981), 0x0A2E, UpdateRequirements };
-				inline static REL::Hook _Hook6{ REL::ID(2224981), 0x0A51, UpdateRequirements };
-				inline static REL::Hook _Hook7{ REL::ID(2224981), 0x0A74, UpdateRequirements };
-				inline static REL::Hook _Hook8{ REL::ID(2224981), 0x0C7A, UpdateRequirements };
-				inline static REL::Hook _Hook9{ REL::ID(2224981), 0x0CEB, UpdateRequirements };
-				inline static REL::Hook _HookA{ REL::ID(2224981), 0x104B, UpdateRequirements };
-				inline static REL::Hook _HookB{ REL::ID(2224981), 0x120B, UpdateRequirements };
-				inline static REL::Hook _HookC{ REL::ID(2224981), 0x128F, UpdateRequirements };
-				inline static REL::Hook _HookD{ REL::ID(2224981), 0x1502, UpdateRequirements };
-				inline static REL::Hook _HookE{ REL::ID(2224981), 0x1853, UpdateRequirements };
+				inline static REL::THook _Hook0{ REL::ID(2224973), 0x1072, UpdateRequirements };
+				inline static REL::THook _Hook1{ REL::ID(2224975), 0x01DE, UpdateRequirements };
+				inline static REL::THook _Hook2{ REL::ID(2224981), 0x0590, UpdateRequirements };
+				inline static REL::THook _Hook3{ REL::ID(2224981), 0x084D, UpdateRequirements };
+				inline static REL::THook _Hook4{ REL::ID(2224981), 0x0A02, UpdateRequirements };
+				inline static REL::THook _Hook5{ REL::ID(2224981), 0x0A2E, UpdateRequirements };
+				inline static REL::THook _Hook6{ REL::ID(2224981), 0x0A51, UpdateRequirements };
+				inline static REL::THook _Hook7{ REL::ID(2224981), 0x0A74, UpdateRequirements };
+				inline static REL::THook _Hook8{ REL::ID(2224981), 0x0C7A, UpdateRequirements };
+				inline static REL::THook _Hook9{ REL::ID(2224981), 0x0CEB, UpdateRequirements };
+				inline static REL::THook _HookA{ REL::ID(2224981), 0x104B, UpdateRequirements };
+				inline static REL::THook _HookB{ REL::ID(2224981), 0x120B, UpdateRequirements };
+				inline static REL::THook _HookC{ REL::ID(2224981), 0x128F, UpdateRequirements };
+				inline static REL::THook _HookD{ REL::ID(2224981), 0x1502, UpdateRequirements };
+				inline static REL::THook _HookE{ REL::ID(2224981), 0x1853, UpdateRequirements };
 			};
 
 			// Prevent stored frames from stacking
@@ -162,7 +162,7 @@ namespace Workshop
 					return a_this->startingWorldOrCell != a_compare.startingWorldOrCell;
 				}
 
-				inline static REL::HookVFT _CompareImpl{ RE::ExtraStartingWorldOrCell::VTABLE[0], 0x01, CompareImpl };
+				inline static REL::THookVFT _CompareImpl{ RE::ExtraStartingWorldOrCell::VTABLE[0], 0x01, CompareImpl };
 			};
 
 			// Redirect Cancel input, block other buttons
@@ -195,7 +195,7 @@ namespace Workshop
 					_HandleEvent(a_this, a_event);
 				}
 
-				inline static REL::HookVFT _HandleEvent{ RE::WorkshopMenu::VTABLE[1], 0x08, HandleEvent };
+				inline static REL::THookVFT _HandleEvent{ RE::WorkshopMenu::VTABLE[1], 0x08, HandleEvent };
 			};
 
 			// Enable ExtraStartingWorldOrCell as a stacking condition
