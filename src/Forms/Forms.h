@@ -48,7 +48,7 @@ namespace Forms
 
 		static void LoadSetting(std::filesystem::path& a_path)
 		{
-			/*
+			
 			if (!std::filesystem::exists(a_path))
 			{
 				return;
@@ -77,7 +77,7 @@ namespace Forms
 			}
 
 			ini_file.Reset();
-			*/
+			
 		}
 
 		inline static RE::BSTHashMap<RE::BGSKeyword*, std::string> map;
